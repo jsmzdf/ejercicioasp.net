@@ -27,13 +27,6 @@
 
 
     </div>
-    <asp:ScriptManager runat="server">
-            <Scripts>
-               
-                <asp:ScriptReference Name="EnvioMensajes.js" Assembly="System.Web" Path="~/Scripts/EnvioMensajes.js" />
-          
-             
-            </Scripts>
-        </asp:ScriptManager>
+  
 
 </asp:Content>
