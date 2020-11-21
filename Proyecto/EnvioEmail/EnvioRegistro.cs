@@ -8,22 +8,16 @@ using System.Net.Mail;
 using System.Diagnostics;
 using System.IO;
 using System.Text;
-namespace Proyecto.Validacoin
+namespace Proyecto.EnvioEmail
 {
-    public class Usuario
+    public class EnvioRegistro
     {
 
 
-        public string correo;
-        public string nombre;
-        public string clave;
-        public string salida;
-        public Usuario()
+       
+        public EnvioRegistro()
         {
-            this.clave = "";
-            this.correo = "";
-            this.nombre = "";
-            this.salida = "";
+            
         }
 
         public void enviar(string correo, string clave, string nombre)
