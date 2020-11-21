@@ -11,12 +11,12 @@ namespace Proyecto.Mundo
         protected string correo;
         protected string nombre;
         protected string clave;
-        protected string salida;
+        
         Usuario() {
             this.clave = "";
             this.correo = "";
             this.nombre = "";
-            this.salida = "";
+           
         }
         
     }

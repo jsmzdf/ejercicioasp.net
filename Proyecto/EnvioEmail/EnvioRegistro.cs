@@ -14,10 +14,12 @@ namespace Proyecto.EnvioEmail
     {
 
 
-       
+        protected string salida;
+            
         public EnvioRegistro()
         {
-            
+            this.salida = "";
+
         }
 
         public void enviar(string correo, string clave, string nombre)
