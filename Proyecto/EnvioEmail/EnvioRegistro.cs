@@ -13,43 +13,17 @@ namespace Proyecto.EnvioEmail
     public class EnvioRegistro
     {
 
-
-        protected string salida;
+        public string codigo;
             
         public EnvioRegistro()
         {
-            this.salida = "";
+            this.codigo = "";
 
         }
 
-        public void enviar(string correo, string clave, string nombre)
-        {/*
-            var psi = new ProcessStartInfo();
-            psi.FileName = @"C:\WINDOWS\system32\cmd.exe";
+        public void Enviar(string correo, string nombre)
+        {
 
-
-            var script = @"/c node C:\Users\sebas\udistri\octavo\Bases1\pruebaHTmlenvioemails\EnvioMensajes.js";
-
-            var v1 = "qdqdasdasdasd";
-            var v2 = "qdqdasdasdasd";
-
-            psi.Arguments = $"\"{script}\" \"{v1}\" \"{v2}\"";
-
-
-            psi.UseShellExecute = false;
-            psi.RedirectStandardOutput = true;
-            psi.RedirectStandardError = true;
-            psi.RedirectStandardInput = true;
-
-
-
-            using (var process = Process.Start(psi))
-            {
-                nombre = process.StandardError.ReadToEnd();
-                this.nombre = process.StandardOutput.ReadToEnd();
-            }
-            */
-            
             System.Net.Mail.MailMessage mail = new System.Net.Mail.MailMessage();
             SmtpClient smtp = new SmtpClient();
             mail.From = new MailAddress("jsebastianmg00@gmail.com");
@@ -60,16 +34,18 @@ namespace Proyecto.EnvioEmail
             smtp.Credentials = new NetworkCredential("jsebastianmg00@gmail.com", "20171020059");
             smtp.Host = "smtp.gmail.com";
             mail.To.Add(correo);
-            //mail.IsBodyHtml = true;
-            mail.Subject = "Registro";
-            mail.Body = @"Hello";
+            mail.Subject = "Codigo de registro";
+            Random rdm = new Random();
+            this.codigo = Convert.ToString(rdm.Next(100000, 999999));
+            String mensaje = "Hola " + nombre + " tu codigo de registro es " + codigo;
+            mail.Body = @mensaje;
            // try
            // {
                 smtp.Send(mail);
             //  }
             //  catch (SmtpException e)
             //  {
-            this.salida = "asdasd"; //e.Message;
+            //e.Message;
           //  }
           //  finally
           //   {
